@@ -10,6 +10,16 @@ class App extends React.Component {
 	
       this.buttonClcik = this.buttonClcik.bind(this);
    };
+   componentWillMount()
+   {
+      console.log("componentWillMount()");
+   }
+   componentDidMount()
+   {
+      console.log("componentDidMount()");
+      var valuearray=["num" ,"num1"];
+      this.setState({data: valuearray});
+   }
    buttonClcik() {
       var item = "setState..."
       var myArray =this.state.data.slice();
@@ -17,7 +27,9 @@ class App extends React.Component {
       this.setState({data: myArray});
       console.log(this.state)
    };
+
    render() {
+      console.log("render()");
       return (
          <div>
             <button onClick = {this.buttonClcik}>SET STATE</button>
@@ -26,4 +38,5 @@ class App extends React.Component {
       );
    }
 }
+
 export default App;
